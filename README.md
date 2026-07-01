@@ -13,7 +13,7 @@ A formal foundation connecting epistemological axioms with machine learning theo
 | File | Description | Size |
 |------|-------------|------|
 | [EAS-Single-Axiom-Foundation.md](./EAS-Single-Axiom-Foundation.md) | **Main Paper** — Single axiom system generating T0–T7 theorems | 135 KB |
-| [EAS-Static-Statistical-Bridge-v6.md](./EAS-Static-Statistical-Bridge-v6.md) | **Bridge Paper** — Formal connection between EAS and Epiplexity with three proved theorems | 101 KB |
+| [The-Static-Statistical-Bridge.md](./The-Static-Statistical-Bridge.md) | **Bridge Paper** — Formal connection between EAS and Epiplexity with three proved theorems | 101 KB |
 | [EAS-Discrete-Continuous-Duality-Proof.md](./EAS-Discrete-Continuous-Duality-Proof.md) | **Duality Proofs** — Three theorems on discrete-continuous relationship | 69 KB |
 | [T5_TwoStream_Impossibility.lean](./T5_TwoStream_Impossibility.lean) | **Lean 4 Proof** — Formal verification of Two-Stream Impossibility Theorem | 9 KB |
 
