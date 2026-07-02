@@ -3,11 +3,7 @@
 \usepackage{geometry}
 \geometry{margin=2.5cm}
 
-\usepackage{xeCJK}
-\setCJKmainfont{Noto Serif CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Noto Sans Mono CJK SC}
-
+\usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{hyperref}
 \usepackage{booktabs}
@@ -50,7 +46,7 @@ EAS's single axiom $S \subset E \implies R_S \not\cong E$ (finite observation is
 
 The key divergence: FEP frames cognitive limitations as an \textbf{engineering problem} (approximate inference can be progressively improved), while EAS frames them as a \textbf{structural theorem} (perfect self-modeling is impossible even with unlimited computation).
 
-As of mid-2026, Friston has not formally addressed G\"{o}delian incompleteness or ``perfect self-modeling impossibility'' in published work---although the 2025 Fields--Friston paper acknowledged that ``a system cannot have a fully precise model of its own processing'' \cite{fields2025}. The optimal entry point for dialogue is: \textbf{using EAS's single axiom to provide a first-principles proof of why FEP's approximate inference can only be approximate}.
+As of mid-2026, Friston has not formally theorem-ized G\"{o}delian incompleteness or ``perfect self-modeling impossibility'' in published work---although the 2025 Fields--Friston paper suggested that systems cannot have fully precise models of the QRFs they interact with (paraphrase, not a verbatim quote) \cite{fields2025}. The optimal entry point for dialogue is: \textbf{using EAS's single axiom to provide a first-principles proof of why FEP's approximate inference can only be approximate}.
 
 \section{Does FEP Implicitly Contain EAS's Quotient Cognition Constraint?}
 
@@ -95,7 +91,7 @@ Source of limitation & Biological/computational resource limits & Epistemic stru
 \textbf{Paper} & \textbf{Year} & \textbf{Relation to Incompleteness} \\
 \midrule
 Friston, Ramstead \& Sakthivadivel, ``Generative modelling in non-equilibrium statistical mechanics'' & 2025 & Distinguishes model from modeled system; does not discuss self-modeling impossibility \\
-Fields, Albarracin, Friston et al., ``Inner screens and imaginative experience'' & 2025 & \textbf{Closest}: acknowledges ``system cannot have fully precise model of its QRFs'' but as practical observation, not theorem \\
+Fields, Albarracin, Friston et al., ``Inner screens and imaginative experience'' & 2025 & \textbf{Closest}: suggests systems cannot have fully precise models of their QRFs (paraphrase), but as practical observation, not theorem \\
 Laukkonen, Friston \& Chandaria, ``A Beautiful Loop'' & 2025 & Discusses self-reference and consciousness, but frames as positive emergence (self-reference produces consciousness), not negative constraint (self-reference cannot be perfect) \\
 Five Fristonian Formulae (Entropy special issue) & 2025 & Review; does not address incompleteness \\
 \bottomrule
@@ -104,7 +100,7 @@ Five Fristonian Formulae (Entropy special issue) & 2025 & Review; does not addre
 
 \subsection{Clear Conclusion}
 
-\textbf{As of mid-2026, Friston has not formally addressed G\"{o}delian incompleteness or cognitive boundary problems.} Fields--Friston (2025) contains a key statement---``the executive/metacognitive system cannot have a fully-accurate model of the QRFs it interacts with'' \cite{fields2025}---but this is presented as a consequence of Ashby's Required Variety Law, not elevated to an epistemic axiom or insurmountable theorem. The ``Beautiful Loop'' touches on self-referential structure, but its core thesis is \textbf{how self-reference produces consciousness}, not \textbf{why self-reference cannot be perfectly closed}.
+\textbf{As of mid-2026, Friston has not formally addressed G\"{o}delian incompleteness or cognitive boundary problems.} Fields--Friston (2025) discussed that systems cannot have fully-accurate models of the QRFs they interact with \cite{fields2025}---this can be understood as a consequence of Ashby's Required Variety Law (this is our interpretation, not an explicit attribution in the original text), but it is not elevated to an epistemic axiom or insurmountable theorem. The ``Beautiful Loop'' touches on self-referential structure, but its core thesis is \textbf{how self-reference produces consciousness}, not \textbf{why self-reference cannot be perfectly closed}.
 
 \section{Epiplexity Five-Layer Resonance vs.\ FEP Variational Free Energy}
 
@@ -147,13 +143,12 @@ Scope & Validation of epistemic conclusions & Any Markov blanket system \\
 \item \textbf{EAS's rebuttal}: FEP's mathematical structure preserves $q = p(\cdot|o)$ as a limit (KL divergence can approach zero), implying the ideal observer is conceivable as an asymptotic limit. EAS explicitly denies this.
 \end{itemize}
 
-\subsection{Divergence 2: Self-Reference as ``Mechanism of Consciousness'' vs.\ ``Loop That Cannot Perfectly Close''}
+\subsection{Divergence 2: Imperfect Closure of Self-Reference---EAS Provides Formal Grounding for Beautiful Loop}
 
 \begin{itemize}[leftmargin=*]
-\item \textbf{FEP} (``Beautiful Loop''): Self-referential recursion produces consciousness---``the world model knows itself non-locally'' \cite{laukkonen2025}.
-\item \textbf{EAS}: Self-reference cannot perfectly close---$R_S \not\cong E$; any self-model is necessarily a quotient space, losing information.
-\item \textbf{Friston's possible response}: Beautiful Loop does not require ``perfect'' closure---as long as recursion is sufficiently deep, it produces the phenomenon of consciousness. Perfection is not a necessary condition for consciousness.
-\item \textbf{EAS's rebuttal}: If one admits self-reference is imperfect, then ``Beautiful Loop'' has seams. EAS theorematizes the size and source of these seams.
+\item \textbf{FEP} (``Beautiful Loop''): Self-referential recursion produces consciousness---the world model ``knows'' itself non-locally \cite{laukkonen2025}. \textbf{Importantly}: Beautiful Loop itself does not require perfect closure---its core feature is ``field-evidencing,'' i.e., consciousness arises from the \emph{non-perfectly-closed} state of self-referential loops, not from perfect self-consistency.
+\item \textbf{EAS's complement}: EAS does not \emph{contradict} Beautiful Loop but provides the formal foundation that Beautiful Loop lacks. EAS's single axiom $R_S \not\cong E$ rigorously proves that self-referential loops are \textbf{necessarily} imperfect---any self-model is necessarily a quotient space, and residual information loss cannot be eliminated. This provides mathematical grounding for Beautiful Loop's ``non-local knowing'': consciousness arises not \emph{despite} the gap, but \emph{because} the gap is structurally necessary.
+\item \textbf{Key difference}: Beautiful Loop describes what this imperfect closure \emph{produces} (consciousness); EAS explains why this imperfect closure \emph{must exist} (quotient cognition constraint). The two are descriptive vs.\ explanatory---not adversarial.
 \end{itemize}
 
 \subsection{Divergence 3: Markov Blanket as ``Enabler of Cognition'' vs.\ ``Cage of Cognition''}
@@ -163,6 +158,7 @@ Scope & Validation of epistemic conclusions & Any Markov blanket system \\
 \item \textbf{EAS}: Markov blanket is precisely the realization of $S \subset E$---internal states can only be approximate encodings of external states; the blanket itself is the boundary of the quotient map.
 \item \textbf{Friston's possible response}: This is exactly FEP's insight---cognition is achieved through blanket conditional independence, not limited by it.
 \item \textbf{EAS's rebuttal}: FEP sees only the enabling face, not the limiting face. EAS's single axiom proves that enabling and limiting are two sides of the same coin.
+\item \textbf{Related critical literature}: Raja et al.\ (2021) ``The Markov Blanket Trick'' and Bruineberg et al.\ (2022) ``The Emperor's New Markov Blankets'' \cite{bruineberg2022} critically examine the metaphysical status of Markov blankets from different angles---the former argues that blanket demarcation may be an epistemic convenience rather than an ontological fact; the latter distinguishes ``Pearl blankets'' (epistemic tools in Bayesian networks) from ``Friston blankets'' (physical boundaries in FEP), revealing persistent confusion between the two in the FEP literature. These critiques are highly relevant to EAS's core concern (how the boundary of $S \subset E$ is demarcated) but approach it from different angles.
 \end{itemize}
 
 \subsection{Divergence 4: Terminal State of Free Energy Minimization}
@@ -171,16 +167,16 @@ Scope & Validation of epistemic conclusions & Any Markov blanket system \\
 \item \textbf{FEP}: Non-equilibrium steady state (NESS); variational density approximates the true posterior.
 \item \textbf{EAS}: Even upon reaching NESS, internal states still encode a quotient space of external states---$R_S$ rather than $E$ itself. Free energy minimization can only shrink the distance between quotient space and original space, not eliminate it.
 \item \textbf{Friston's possible response}: FEP never claimed internal states fully encode external states---the ``as if'' framework makes no such commitment.
-\item \textbf{EAS's追问}: If FEP does not commit to $q \to p$ convergence, then FEP's description of ``self-evidencing'' is not about truth but about survival---fundamentally different from EAS's epistemic concerns.
+\item \textbf{EAS's follow-up}: If FEP does not commit to $q \to p$ convergence, then FEP's description of ``self-evidencing'' is not about truth but about survival---fundamentally different from EAS's epistemic concerns.
 \end{itemize}
 
 \subsection{Divergence 5: Status of Lean4 Formalization}
 
 \begin{itemize}[leftmargin=*]
-\item \textbf{EAS}: All theorems T0--T7 compile and pass in Lean4; formal verification ensures unimpeachability.
-\item \textbf{FEP}: FEP lacks equivalent formal verification. Biehl, Pollock \& Kanai (2021) proved by counterexample that FEP's Free Energy Lemma is ``wrong in general'' \cite{biehl2021}.
+\item \textbf{EAS}: All theorems T0--T7 compile and pass in Lean4; formal verification ensures the \emph{inference chain} is unimpeachable (though the axiom itself can be questioned---see below).
+\item \textbf{FEP}: FEP lacks equivalent formal verification. Biehl, Pollock \& Kanai (2021) proved by counterexample that FEP's Free Energy Lemma fails under certain conditions \cite{biehl2021}. \textbf{However}: Friston, Da Costa \& Parr (2021) published a formal response \cite{friston2021response}, arguing that Biehl et al.'s critique targets a ``particular formalization'' rather than FEP's core ideas. This debate remains unresolved.
 \item \textbf{Friston's possible response}: FEP is a physical principle, not a mathematical theorem---analogous to the principle of least action; formal proof is not required.
-\item \textbf{EAS's rebuttal}: Physical principles can be challenged (FEP has been revised multiple times), while Lean4-verified theorems cannot be overturned. This is a fundamental methodological difference.
+\item \textbf{EAS's rebuttal}: Physical principles can be challenged (FEP has been revised multiple times), while Lean4-verified inference chains cannot be overturned. \textbf{However}, EAS's single axiom $S \subset E \implies R_S \not\cong E$ is itself not unquestionable---it is a metaphysical commitment about cognitive structure, not an empirically falsifiable proposition. Formalization ensures ``if one accepts the axiom, the consequences are inescapable,'' but does not ensure the axiom itself is true.
 \end{itemize}
 
 \section{Potential Dialogue Points}
@@ -191,7 +187,7 @@ FEP acknowledges exact inference is infeasible; EAS proves perfect self-modeling
 
 \subsection{EAS Can Provide First-Principles Support for FEP}
 
-Dietz's closure framework \cite{dietz} independently derives from philosophical first principles a conclusion structurally equivalent to FEP---``free energy is remainder; prediction error minimization is supersession.'' EAS's single axiom arrives at a similar position via a different path: \textbf{because $S \subset E \implies R_S \not\cong E$, finite systems must minimize free energy}---free energy minimization is the only survival strategy for quotient cognitive systems in NESS. Three frameworks (FEP, Dietz's closure framework, EAS) converge to the same structure from different directions.
+Notably, Dietz's self-published paper (not peer-reviewed) \cite{dietz} also independently derives from philosophical first principles a conclusion structurally equivalent to FEP---``free energy is remainder; prediction error minimization is supersession.'' \textbf{Although this paper has not undergone peer review and its claim of ``structural equivalence'' remains to be tested by the scholarly community}, it represents a direction of parallel thinking. EAS's single axiom arrives at a similar position via a different path: \textbf{because $S \subset E \implies R_S \not\cong E$, finite systems must minimize free energy}---free energy minimization is the only survival strategy for quotient cognitive systems in NESS. The convergence of three frameworks (FEP, Dietz's closure framework, EAS) from different directions is itself worth further exploration.
 
 \subsection{``Incompleteness'' as Completion of FEP, Not Negation}
 
@@ -200,7 +196,7 @@ EAS is not a replacement for FEP but its epistemic completion. FEP answers ``how
 \section{Conclusion}
 
 \begin{enumerate}[leftmargin=*]
-\item \textbf{FEP has not yet addressed the ``incompleteness'' problem.} The 2025 Fields--Friston paper touches on this topic but does not theorem-ize it. This is the core gap EAS can fill.
+\item \textbf{FEP has not yet theorem-ized the ``incompleteness'' problem.} The 2025 Fields--Friston paper touches on this topic (acknowledging systems cannot have fully precise models of their QRFs); Bruineberg et al.\ (2022) and Raja et al.\ (2021) critically examine the ontological status of Markov blankets from different angles; but none have elevated cognitive incompleteness to an insurmountable theorem. This is the core gap EAS can fill.
 
 \item \textbf{FEP does not assume an ideal observer, but preserves the ideal observer as a mathematical limit.} EAS proves this limit is unreachable---not due to insufficient computational resources, but due to epistemic structure.
 
@@ -244,6 +240,18 @@ Biehl, M., Pollock, F. \& Kanai, R. (2021).
 \textit{A Technical Critique of Some Parts of the Free Energy Principle}.
 Entropy, 23(3), 293.
 \url{https://doi.org/10.3390/e23030293}
+
+\bibitem{friston2021response}
+Friston, K.J., Da Costa, L. \& Parr, T. (2021).
+\textit{Some Interesting Observations on the Free Energy Principle}.
+Entropy, 23(8), 1076.
+\url{https://doi.org/10.3390/e23081076}
+
+\bibitem{bruineberg2022}
+Bruineberg, J., Dolega, K., Dewhurst, J. \& Baltieri, M. (2022).
+\textit{The Emperor's New Markov Blankets}.
+Behavioral and Brain Sciences, 45, e131.
+\url{https://doi.org/10.1017/S0140525X21002351}
 
 \bibitem{dietz}
 Dietz, C.F. (n.d.).
