@@ -104,3 +104,12 @@ ORCID: [0009-0008-3136-2457](https://orcid.org/0009-0008-3136-2457)
 ## 📄 License
 
 This work is released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+## 📊 Framework Comparisons
+
+| File | Description |
+|------|-------------|
+| [comparisons/EAS-vs-Friston-FEP.md](./comparisons/EAS-vs-Friston-FEP.md) | EAS vs Friston Free Energy Principle — deep comparative analysis |
+| [comparisons/EAS-vs-Friston-FEP.pdf](./comparisons/EAS-vs-Friston-FEP.pdf) | Same paper in PDF format |
+| [comparisons/EAS-vs-Friston-FEP.tex](./comparisons/EAS-vs-Friston-FEP.tex) | LaTeX source |
+
