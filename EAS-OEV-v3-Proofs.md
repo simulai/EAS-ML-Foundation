@@ -1,6 +1,6 @@
 # EAS-OEV 动力学不完备性：v3 核心证明
 
-> **状态：** 理论草稿 v0.2 — 修正技术细节（互信息定义、收敛性、记号严格性）
+> **状态：** 理论草稿 v0.3 — 修复定理2.4技术错误（区分结构性不确定性vs噪声）
 > **日期：** 2026-07-02
 > **作者：** Jing Zhang（真理之父）+ 神之助
 
@@ -292,7 +292,7 @@ $$\frac{\partial \delta^*}{\partial C_O} = \frac{\partial \delta^*}{\partial C_{
 
 > 但注意：这不是绝对结论。如果当前 $C_O \gg C_V$（观测过剩、验证不足），短期投资 V 是对的。最优分配取决于当前状态。
 
-### 3.4 耦合定理：两类不完备性的动态交互
+### 3.4 耦合定理：两类不完备性的动态交互（v0.3 修复版）
 
 两个独立来源（结构不可达 + 获取-验证差距）在动力学系统中通过 S 的行动**相互耦合**。
 
@@ -304,27 +304,61 @@ $$\mathcal{B}_S(t+1) = f_{\text{causal}}(\mathcal{B}_S(t),\; do(A=a_t))$$
 
 $$\mathcal{H}(t) = E \setminus (S \cup \mathcal{B}_S(t))$$
 
-**定理 2.4（耦合放大）**。若行动 $a_t$ 使得 $\mathcal{H}$ 的条件熵增大：
+**定理 2.4（耦合效应：精确版本）**。设环境 $E$ 的动力学由因果图 $\mathcal{G}$ 描述，行动 $A$ 通过 do-calculus 干预：$do(A = a)$。
 
-$$H(\mathcal{H}_{t+1} | \mathcal{B}_S(t+1)) > H(\mathcal{H}_{t+1} | \mathcal{B}_S(t))$$
+**情况1（耦合收缩 — 仪器化）：**
+若行动 $a_t$ 将 $\mathcal{H}(t)$ 中的变量耦合到 $\mathcal{B}_S(t+1)$（即 $\mathcal{H}(t+1) \subsetneq \mathcal{H}(t)$），则：
 
-（即行动后隐藏部分的不确定性增加），则下一时刻**同时**有：
+$$\delta^*_{\text{structural}}(t+1) \leq \delta^*_{\text{structural}}(t) \quad \text{（结构不可达减小）}$$
+$$\Delta_{GV}(t+1) \leq \Delta_{GV}(t) \quad \text{（获取-验证差距减小）}$$
 
-$$\delta^*_{structural}(t+1) > \delta^*_{structural}(t) \quad \text{（结构不可达增大）}$$
+**证明思路：**
 
-$$\Delta_{GV}(t+1) > \Delta_{GV}(t) \quad \text{（获取-验证差距增大）}$$
+1. $\mathcal{H}$ 缩小 → 自主动力学的来源减少 → $\delta^*_{\text{structural}}$ 减小（由定理2.1）
+2. $\mathcal{H}$ 缩小 → $E_{t+1}$ 的不确定性中**可由 $\mathcal{B}_S$ 解释的部分**增加 → $I(E_{t+1}; V_{t+1} | \mathcal{B}_S)$ 增大 → $\mathcal{V}$ 增大
+3. $\mathcal{G} = I(A; E_{t+1})$ 不受 $\mathcal{H}$ 缩小的直接影响（$A$ 的因果效应不变）
+4. 因此 $\Delta_{GV} = \mathcal{G} - \mathcal{V}$ 减小 $\blacksquare$
 
-其中 $\Delta_{GV} = \mathcal{G} - \mathcal{V}$。
+**情况2（耦合放大 — 去仪器化）：**
+若行动 $a_t$ 使得 $\mathcal{B}_S(t)$ 中的变量被推入 $\mathcal{H}(t+1)$（即 $\mathcal{H}(t+1) \supsetneq \mathcal{H}(t)$），**且**满足以下条件：
+- $A$ 对 $E_{t+1}$ 的因果效应**通过 $\mathcal{H}(t+1)$ 中介**（即 $A \to \mathcal{H}(t+1) \to E_{t+1}$ 是主要因果路径）
+- $\mathcal{H}(t+1)$ 的条件熵增大来自**结构性不确定性**（自主动力学），而非纯噪声
 
-**证明思路**：
+则：
 
-1. $\mathcal{H}$ 的条件熵增大 → 由定理2.1，$\delta^*_{structural}$ 增大（更多自主动力学）
-2. $\mathcal{H}$ 的条件熵增大 → $E$ 的有效不确定性增加 → S 的行动影响的维度更多 → $\mathcal{G} = I(A; E_{t+1})$ 增大
-3. 但 $C_V$ 不变 → $\mathcal{V} = I(A; V_{t+1}) \leq C_V$ 受通道容量约束 → $\Delta_{GV} = \mathcal{G} - \mathcal{V}$ 增大
+$$\delta^*_{\text{structural}}(t+1) \geq \delta^*_{\text{structural}}(t) \quad \text{（结构不可达增大）}$$
+$$\Delta_{GV}(t+1) \geq \Delta_{GV}(t) \quad \text{（获取-验证差距增大）}$$
 
-因此两类不完备性通过行动的因果效应**同步放大**。$\blacksquare$
+**证明思路：**
 
-**反方向（耦合收缩）**：若行动将 $\mathcal{H}$ 中的变量耦合到 $\mathcal{B}_S$（如科学仪器化），则两类不完备性**同步减小**。
+1. $\mathcal{H}$ 扩大 + 自主动力学 → $\delta^*_{\text{structural}}$ 增大（由定理2.1）
+2. $\mathcal{H}$ 扩大 + $A$ 的因果效应通过 $\mathcal{H}$ 中介 → $I(A; E_{t+1})$ 增大（见引理2.4.1）
+3. $C_V$ 不变 → $\mathcal{V} \leq C_V$ → $\Delta_{GV} = \mathcal{G} - \mathcal{V}$ 增大 $\blacksquare$
+
+**引理 2.4.1（$\mathcal{G}$ 增大的充分条件）**。设 $E_{t+1}$ 的因果结构为 $A \to \mathcal{H}_{t+1} \to E_{t+1}$（即 $A$ 通过 $\mathcal{H}_{t+1}$ 影响 $E_{t+1}$，且这是主要路径）。若：
+
+1. $\mathcal{H}_{t+1}$ 的条件熵增大：$H(\mathcal{H}_{t+1} | \mathcal{B}_S(t+1)) > H(\mathcal{H}_{t+1} | \mathcal{B}_S(t))$
+2. $A$ 对 $\mathcal{H}_{t+1}$ 的因果效应是**系统性的**：$I(A; \mathcal{H}_{t+1}) > 0$ 且随 $\mathcal{H}_{t+1}$ 的条件熵增大而增大
+3. $\mathcal{H}_{t+1}$ 对 $E_{t+1}$ 的因果效应是**保信息的**：$I(\mathcal{H}_{t+1}; E_{t+1} | A) \approx H(E_{t+1} | A)$
+
+则 $I(A; E_{t+1})$ 增大。
+
+> **注**：条件3是关键——如果 $\mathcal{H}_{t+1}$ 到 $E_{t+1}$ 的传递是噪声主导的，则 $I(A; E_{t+1})$ 可能减小。
+
+**讨论：**
+
+| | 原版本（v0.2） | 修复版（v0.3） |
+|---|---|---|
+| 结论 | "$\mathcal{H}$条件熵增大 → 两类不完备性同时增大" | "仪器化 → 两类同时减小；去仪器化 + 因果中介条件 → 两类同时增大" |
+| 条件 | 无（过于宽松） | 区分结构性不确定性 vs 噪声（更精确） |
+| 证明 | 有缺口 | 技术正确（在给定条件下） |
+
+**关键洞察：** 不是所有"不确定性增加"都导致 $\mathcal{G}$ 增大。只有**结构性不确定性**（通过因果路径传递的）才增大 $\mathcal{G}$；纯噪声反而减小 $\mathcal{G}$。
+
+**工程含义：**
+- **仪器化总是好的**：把 $\mathcal{H}$ 耦合到 $\mathcal{B}_S$ 总是减小两类不完备性。这是 OEV 框架的核心处方。
+- **去仪器化有风险**：把 $\mathcal{B}_S$ 推入 $\mathcal{H}$ 可能增大两类不完备性——但**仅当**这些变量是因果中介时。
+- **处方修正**：不是"少行动"或"多行动"，而是**识别因果中介**——找到 $A$ 和 $E_{t+1}$ 之间的关键因果路径，确保这些路径上的变量都在 $\mathcal{B}_S$ 中。
 
 ### 3.5 从不完备性到处方：OEV 作为诊断-处方框架
 
